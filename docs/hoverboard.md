@@ -64,6 +64,11 @@ odrv0.axis0.controller.config.vel_limit = 10
 odrv0.axis0.controller.config.control_mode = CONTROL_MODE_VELOCITY_CONTROL
 ```
 
+With odrivetool V0.5.2 and later, you must explicetly enable the brake resistor:
+```txt
+odrv0.config.enable_brake_resistor
+```
+
 In the next step we are going to start powering the motor and so we want to make sure that some of the above settings that require a reboot are applied first.
 ```txt
 odrv0.save_configuration()
