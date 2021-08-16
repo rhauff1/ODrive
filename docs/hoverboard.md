@@ -152,10 +152,12 @@ Lets use GPIO 3/4 for the velocity inputs so that we don't have to disable UART.
 Then let's map the full stick range of these inputs to some suitable velocity setpoint range.
 We also have to reboot to activate the PWM input.
 ```txt
+odrv0.config.gpio3_mode = GPIO_MODE_PWM
 odrv0.config.gpio3_pwm_mapping.min = -2
 odrv0.config.gpio3_pwm_mapping.max = 2
 odrv0.config.gpio3_pwm_mapping.endpoint = odrv0.axis0.controller._input_vel_property
 
+odrv0.config.gpio4_mode = GPIO_MODE_PWM
 odrv0.config.gpio4_pwm_mapping.min = -2
 odrv0.config.gpio4_pwm_mapping.max = 2
 odrv0.config.gpio4_pwm_mapping.endpoint = odrv0.axis1.controller._input_vel_property
